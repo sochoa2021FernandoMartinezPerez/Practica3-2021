@@ -27,6 +27,7 @@ public class NuevoContacto extends AppCompatActivity {
         tvNombre.setOnClickListener(
                 v -> {
                     Intent intent = new Intent(NuevoContacto.this, IntroducirDatos.class);
+                    intent.putExtra("texto",tvNombre.getText());
                     startActivityForResult(intent, 1);
                 }
         );
@@ -35,6 +36,7 @@ public class NuevoContacto extends AppCompatActivity {
         tvApellidos.setOnClickListener(
                 v -> {
                     Intent intent = new Intent(NuevoContacto.this, IntroducirDatos.class);
+                    intent.putExtra("texto",tvApellidos.getText());
                     startActivityForResult(intent, 2);
                 }
         );
@@ -43,6 +45,7 @@ public class NuevoContacto extends AppCompatActivity {
         tvEmpresa.setOnClickListener(
                 v -> {
                     Intent intent = new Intent(NuevoContacto.this, IntroducirDatos.class);
+                    intent.putExtra("texto",tvEmpresa.getText());
                     startActivityForResult(intent, 3);
                 }
         );

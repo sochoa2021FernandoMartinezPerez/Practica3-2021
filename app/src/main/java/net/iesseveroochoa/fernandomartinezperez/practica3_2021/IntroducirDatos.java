@@ -16,10 +16,14 @@ public class IntroducirDatos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_introducir_datos);
 
+        EditText editText = findViewById(R.id.etInValor);
+        editText.setText(getIntent().getStringExtra("texto"));
+
         Button ok = findViewById(R.id.btidOK);
         ok.setOnClickListener(
                 v -> {
-                    EditText editText = findViewById(R.id.etInValor);
+
+
                     String resultado = editText.getText().toString();
 
                     Intent intent = new Intent();
