@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">Practica3-2021</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="cancel">CANCEL</string>
+    <string name="listaContactos"></string>
+    <string name="edad">Edad:</string>
+    <string name="edadnum">1</string>
+    <string name="empresa">Empresa</string>
+    <string name="fav">Favoritos</string>
+    <string name="hombre">Hombre</string>
+    <string name="inValor">Introduce un valor</string>
+    <string name="llamar">Recodar llamar</string>
+    <string name="liscontactos" />
+    <string name="mujer">Mujer</string>
+    <string name="nombre">Nombre</string>
+    <string name="nuevo">NUEVO</string>
+    <string name="nvC">Nuevo Contacto</string>
+    <string name="ok">OK</string>
+    <string name="particular">Particular</string>
+    <string name="salir">SALIR</string>
+    <string name="telefono">Telefono</string>
+    <string name="vacia" />
 </resources>
