@@ -10,24 +10,28 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class IntroducirDatos extends AppCompatActivity {
-
+    public final static String EXTRA_DATOS="IntoducirDatos";
+    public final static String EXTRA_DATOS_RESULTADO="IntoducirDatos";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_introducir_datos);
 
-        EditText editText = findViewById(R.id.etInValor);
-        editText.setText(getIntent().getStringExtra("texto"));
+        EditText etIntValor = findViewById(R.id.etInValor);
+        String texto = getIntent().getStringExtra(EXTRA_DATOS);
+
+
+        etIntValor.setText(texto);
 
         Button ok = findViewById(R.id.btidOK);
         ok.setOnClickListener(
                 v -> {
 
 
-                    String resultado = editText.getText().toString();
+                    String resultado = etIntValor.getText().toString();
 
                     Intent intent = new Intent();
-                    intent.putExtra("valor", resultado);
+                    intent.putExtra(EXTRA_DATOS_RESULTADO, resultado);
                     setResult(Activity.RESULT_OK, intent);
                     finish();
 

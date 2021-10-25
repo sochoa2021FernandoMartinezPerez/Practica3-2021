@@ -17,6 +17,10 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 public class NuevoContacto extends AppCompatActivity {
+    public final static String EXTRA_NOMBRE = "NuevoContacto";
+    public final static String EXTRA_APELLIDOS = "NuevoContacto";
+    public final static String EXTRA_TELEFONO = "NuevoContacto";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +31,7 @@ public class NuevoContacto extends AppCompatActivity {
         tvNombre.setOnClickListener(
                 v -> {
                     Intent intent = new Intent(NuevoContacto.this, IntroducirDatos.class);
-                    intent.putExtra("texto",tvNombre.getText());
+                    intent.putExtra(IntroducirDatos.EXTRA_DATOS,tvNombre.getText());
                     startActivityForResult(intent, 1);
                 }
         );
@@ -36,7 +40,7 @@ public class NuevoContacto extends AppCompatActivity {
         tvApellidos.setOnClickListener(
                 v -> {
                     Intent intent = new Intent(NuevoContacto.this, IntroducirDatos.class);
-                    intent.putExtra("texto",tvApellidos.getText());
+                    intent.putExtra(IntroducirDatos.EXTRA_DATOS,tvApellidos.getText());
                     startActivityForResult(intent, 2);
                 }
         );
@@ -45,7 +49,7 @@ public class NuevoContacto extends AppCompatActivity {
         tvEmpresa.setOnClickListener(
                 v -> {
                     Intent intent = new Intent(NuevoContacto.this, IntroducirDatos.class);
-                    intent.putExtra("texto",tvEmpresa.getText());
+                    intent.putExtra(IntroducirDatos.EXTRA_DATOS,tvEmpresa.getText());
                     startActivityForResult(intent, 3);
                 }
         );
@@ -56,9 +60,9 @@ public class NuevoContacto extends AppCompatActivity {
                 v -> {
                     Intent intent = new Intent();
 
-                    intent.putExtra("nombre", tvNombre.getText());
-                    intent.putExtra("apellidos", tvApellidos.getText());
-                    intent.putExtra("telefono", etTelefono.getText().toString());
+                    intent.putExtra(EXTRA_NOMBRE, tvNombre.getText());
+                    intent.putExtra(EXTRA_APELLIDOS, tvApellidos.getText());
+                    intent.putExtra(EXTRA_TELEFONO, etTelefono.getText().toString());
                     setResult(RESULT_OK, intent);
                     finish();
                 }
@@ -160,15 +164,15 @@ public class NuevoContacto extends AppCompatActivity {
 
         if (resultCode == Activity.RESULT_OK) {
             if (requestCode == 1) {
-                resultado = data.getStringExtra("valor");
+                resultado = data.getStringExtra(IntroducirDatos.EXTRA_DATOS_RESULTADO);
                 tvNombre.setText(resultado);
 
             } else if (requestCode == 2) {
-                resultado = data.getStringExtra("valor");
+                resultado = data.getStringExtra(IntroducirDatos.EXTRA_DATOS_RESULTADO);
                 tvApellidos.setText(resultado);
 
             } else if (requestCode == 3) {
-                resultado = data.getStringExtra("valor");
+                resultado = data.getStringExtra(IntroducirDatos.EXTRA_DATOS_RESULTADO);
                 tvEmpresa.setText(resultado);
             }
         }
